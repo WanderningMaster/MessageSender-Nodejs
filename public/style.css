@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}   
+
+input{
+    height: 35px;
+}
+
+h2{
+	text-align: center;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+#contacts{
+	padding: 30px;
+    height: 770px;
+    background-color: rgb(221, 203, 203);
+}
+
+.contacts-column>input{
+	width: 90%; 
+}
+
+.contacts-column{
+	display: flex;
+	flex-direction: column;
+	flex: 0 1 45%;
+}
+
+.contacts-row{
+	display: flex;
+}
+
