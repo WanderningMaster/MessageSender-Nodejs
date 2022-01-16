@@ -10,7 +10,8 @@ const JSONform = (id) => {
     return JSON.stringify(obj);
 }
 
-form.addEventListener('submit', async (e) => {
+form.addEventListener('submit', async (event) => {
+    event.preventDefault();
     const data = JSONform("form");
     await fetch('/', {
         method: 'POST',
@@ -18,5 +19,11 @@ form.addEventListener('submit', async (e) => {
             'Content-type': 'application/json'
         },
         body: data
-    });
+    }).then((res) => {
+        if(res.status === 200)
+            alert("Success");
+        else alert("Error");    
+    }).catch((err) => {
+        console.log(err);
+    })    
 });

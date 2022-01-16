@@ -14,7 +14,9 @@ server.get('/', (req, res) => {
 server.post('/', sendToTelegram, sendToEmail, (req, res) => {
     const {mail, url} = req;
     console.log(mail, url);
-    res.json({data: {url: url, email: mail}});
+    res
+        .status(200)
+        .json({data: null});
 });
 
-server.listen(8080, ()=>console.log("Started on 8080 port"));
+server.listen(8000, ()=>console.log("Started on 8000 port"));
